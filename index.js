@@ -332,3 +332,9 @@ arrayOfNames.forEach((item, index)=>{
 for(let k = 0; k < arrayOfNames.length; k++){
     console.log(arrayOfNames[k])
 }
+
+const filteredData = arrayOfNames.filter((item)=>{
+    return item.country === "Ghana"
+})
+
+console.log(filteredData)   
