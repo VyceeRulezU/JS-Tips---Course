@@ -338,3 +338,43 @@ const filteredData = arrayOfNames.filter((item)=>{
 })
 
 console.log(filteredData)   
+
+
+// Create a function that will collect an ice cream order that only contains 2 icecream flavours. let the function print the order in the end.
+
+function iceCreamOrder(customerName, customerPhoneNo, ...flavours){
+
+    const pricePerFlavour = 500
+    const numberOfFlavours = flavours.length
+    const totalPrice = pricePerFlavour * numberOfFlavours
+
+    let order = `Dear ${customerName} with Phone Number - ${customerPhoneNo} You have ordered ${flavours} ice cream flavours. Order Price - N ${totalPrice}`
+    console.log(order)
+}   
+
+iceCreamOrder("Mathew", "09024400040", "Vanilla", " Chocolate", " Butterscotch")
+iceCreamOrder("Anita", "08176964239", " Strawberry", " Mango")    
+
+
+function iceCreamSale(customerName, customerPhoneNo, customerAdd, toppings, flavours) {
+
+    const pricePerFlavour = 500;
+    const pricePerTopping = 200;
+
+    let numberOfToppings = toppings.length;
+    let numberOfFlavours = flavours.length;
+
+    const totalPrice = (pricePerFlavour * numberOfFlavours) + (pricePerTopping * numberOfToppings);
+
+    let order = `Dear ${customerName} with Phone Number - ${customerPhoneNo} and Address - ${customerAdd}, You have ordered ${numberOfFlavours} ice cream flavour(s): ${flavours.join(", ")} with ${numberOfToppings} topping(s): ${toppings.join(", ")}. Order Price - N${totalPrice}`;
+
+    console.log(order);
+}
+
+iceCreamSale(
+    "Mathew",
+    "09024400040",
+    "Lagos",
+    ["Nuts", "Biscuits"],
+    ["Vanilla", "Chocolate", "Butterscotch"]
+);
